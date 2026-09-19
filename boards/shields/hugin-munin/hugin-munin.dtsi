@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "hugin-munin-layout.dtsi"
+#include "hugin-munin-layouts.dtsi"
 
 / {
     kscan0: kscan0 {
