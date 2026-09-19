@@ -1,0 +1,15 @@
+file_format: "1"
+id: hugin-munin
+name: Hugin & Munin
+type: shields
+url: https://github.com/Kuerbiskosar/zmk-config-hugin-munin
+requires:
+  - pro_micro
+#exposes:
+features:
+  - keys
+  - encoder
+  - studio
+siblings:
+  - hugin
+  - munin

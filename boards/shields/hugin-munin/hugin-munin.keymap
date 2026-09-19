@@ -1,0 +1,131 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT     0
+#define SYM      1
+#define NUM      2
+#define MOUSE       3
+#define FUNC    4
+
+/ {
+    behaviors {
+        mouse_msc_encoder: mouse_scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binging-cells = <2>;
+            bindings = <&msc>, <&msc>;
+        };
+        mouse_mmv_encoder: mouse_move_encoder {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv>, <&mmv>;
+        };
+        bt_switch_encoder: bt_switch_encoder {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&bt>, <&bt>;
+        };
+    };
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            display-name = "Default layer";
+            // template taken from in-tree Kiria board. TODO: adjust
+            // Note: layout designed for swiss-german language setting (therefore Y and Z are switched in the "what are the keys" image
+            // but not in the keymap, since the software needs to send 'y' for the computer to understand 'z').
+// ger      engl
+// ,        COMMA
+// .        DOT
+// -        FSLSH (/)
+//
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                               |  Z   |  U    |  I    |  O   |   P   | Enter |
+// | SHIFT |  A  |  S  |  D   |  F   |  G   |                               |  H   |  J    |  K    |  L   |   ¨   |R-SHIFT|
+//         |  Y  |  X  |  C   |  V   |  B   |  |PlayPause|       |MuteSpe|  |  N   |  M    |  ,    |  .   |   -   |
+//                        |FuncL| NumL  | SymL | MouseL |        |  Win  | SPACE  | Ctrl  | ALT |
+            bindings = <
+    &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                      &kp Y &kp U  &kp I     &kp O   &kp P    &kp ENTER
+    &kp LSHFT &kp A &kp S &kp D &kp F &kp G                                      &kp H &kp J  &kp K     &kp L   &kp RBKT &kp RSHFT
+              &kp Z &kp X &kp C &kp V &kp B &kp C_PLAY_PAUSE          &kp C_MUTE  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+                     &mo FUNC &mo NUM &mo SYM &mo MOUSE                  &kp LWIN  &kp SPACE  &kp LCTRL &kp LALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        symbol_layer {
+            display-name = "Symbol";
+// ger      engl
+// \        ralt(BSLH)
+// §        ~ (grave)
+            // ---------------------------------------------------------------------------------------------------------------------------------
+// |Default|  1  |  2  |  3   |  4   |  5   |                               |  6   |  7    |  8    |  9   |   0   |       |
+// |       |  \  |  §  |  <   |  tab | del  |                               |      |  bspc |  {    |  }   |   $   |       |
+//         |  ¦  |  @  |  #   |  ¢   |      |  |       |       |to Symbol|  |  ¬   |  |    |  [    |  ]   |   ^   |
+//                        |     |       | ---- |        |        | RWin  |        |RCtrl  |RALT |
+            bindings = <
+    &to DEFAULT &kp N1       &kp N2    &kp N3    &kp N4 &kp N5                       &kp N6      &kp N7    &kp N8       &kp N9         &kp N0  &trans
+    &trans &kp RA(BSLH) &kp GRAVE &kp NUBS  &kp TAB  &kp DEL                          &trans      &kp BSPC  &kp RA(SQT)  &kp RA(BSLH)   &kp BSLH &trans
+           &kp RA(N1)   &kp RA(N2) &kp RA(N3) &kp RA(N8) &trans  &trans      &to SYM &kp RA(N6)  &kp RA(N7) &kp RA(LBKT)  &kp RA(RBKT) &kp EQUAL
+                     &trans &trans &trans &trans                                   &kp RWIN  &trans  &kp RCTRL &kp RALT
+            >;
+
+            sensor-bindings = <&mouse_msc_endocer SCRL_RIGHT SCRL_LEFT &mouse_msc_encoder SCRL_UP SCRL_DOWN>;
+        };
+
+        number_layer {
+            display-name = "Numpad";
+            // ---------------------------------------------------------------------------------------------------------------------------------
+// |Default|kpEntr|kp 7 |kp 8  |kp 9  |kp / |                               | Ins  | Pg Up | up    | pg dn|   '   |       |
+// |       |kp . |kp 4 |kp 5  |kp 6  |kp *  |                               | kp + | left  | down  | right|       |       |
+//         |kp - |kp 1 |kp 2  |kp 3  |kp 0  |  |       |       |to Num   |  |      | Home  | End   | del  |       |
+//                        |     | ----- |      |        |        |       |        |       |     |
+            bindings = <
+    &to DEFAULT &kp KP_ENTER   &kp KP_N7 &kp KP_N8  &kp KP_N9 &kp KP_SLASH                          &kp INS &kp PG_UP    &kp UP   &kp PG_DN &kp MINUS  &trans
+    &trans &kp KP_DOT     &kp KP_N4 &kp KP_N5  &kp KP_N6  &kp ASTERISK                         &kp KP_PLUS &kp LEFT &kp DOWN &kp RIGHT &trans     &trans
+           &kp KP_MINUS   &kp KP_N1 &kp &KP_N2 &kp KP_N3  &kp N0        &trans        &to NUM  &trans      &kp HOME &kp END  &kp DEL   &trans
+                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp BRIGHTNESS_INC BRIGHTNESS_DEC>;
+        };
+
+        mouse_layer {
+            display-name = "Mouse";
+            // ---------------------------------------------------------------------------------------------------------------------------------
+// |Default| P   |  O  |  I   |   U  |  Z  |                               |      |  M4   |  M5   |      |       |       |
+// |       |  ¨  |  L  |  k   |   J  |  H   |                               |  M3  |  M1   |   M2  |      |       |       |
+//         |  -  |  .  |  ,   |   M  |  N   |  |       |       |to MOUSE |  |      |       |       |      |       |
+//                        |     |       |      | ----- |        |       |        |       |     |
+            bindings = <
+    &to DEFAULT &kp P   &kp O &kp I  &kp U &kp Z                          &trans &mkp MB4 &mkp MB5   &trans &trans  &trans
+    &trans &kp RBKT     &kp L &kp K  &kp J  &kp H                         &mkp MB3 &mkp MB1 &mkp MB2 &trans &trans  &trans
+           &kp FSLH   &kp DOT &kp COMMA &kp M  &kp N &trans    &to MOUSE  &trans      &trans &trans  &trans   &trans
+                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+            >;
+
+            sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT MOVE_LEFT &mouse_mmv_encoder MOVE_UP MOVE_DOWN>;
+        };
+        function_layer {
+            display-name = "Function";
+            // ---------------------------------------------------------------------------------------------------------------------------------
+// |Default|     |     | ZMK  |usbBt |rm Bt|                               |      |  F7   |  F8   | F9   |  F12  |       |
+// |       |WordC|Caps |scrLoc|NumLoc|      |                               |      |  F4   |  F5   |  F6  |  F11  |       |
+//         |AltGr| Alt | Ctrl | Space| Win  |  |       |       |to Func  |  |      | F1    |  F2   |  F3  |  F10  |
+//                        |     |       |      | ----- |        |       |        |       |     |
+            bindings = <
+    &to DEFAULT &trans   &trans &studio_unlock  &out OUT_TOG &bt BT_CLR                          &trans &kp F7 &kp F8 &kp F9 &kp F12  &trans
+    &trans &caps_word     &kp CAPS &kp SLCK  &kp KP_NLCK  &trans                         &trans &kp F4 &kp F5 &kp F6 &kp F6  &kp F11
+           &kp RALT   &kp ALT &kp LCTRL &kp SPACE  &kp LWIN &trans             &to FUNC  &trans      &kp F1 &kp F2  &kp F3   &kp F10
+                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &bt_switch_encoder BT_NXT BT_PRV>;
+        };
+
+
+    };
+};

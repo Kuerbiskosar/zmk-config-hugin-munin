@@ -1,0 +1,72 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+
+        kscan = <&kscan0>;
+        transform = <&matrix_transform0>;
+
+        keys  //                     w   h    x    y     rot    rx    ry
+              // top row
+            = <&key_physical_attrs 100 100    0    129       0     0     0>
+            , <&key_physical_attrs 100 100  100    88       0     0     0>
+            , <&key_physical_attrs 100 100  200    29       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400    0       0     0     0>
+            , <&key_physical_attrs 100 100  500    0       0     0     0>
+
+            , <&key_physical_attrs 100 100  900    0       0     0     0> 
+            , <&key_physical_attrs 100 100 1000    0       0     0     0>
+            , <&key_physical_attrs 100 100 1100    0       0     0     0>
+            , <&key_physical_attrs 100 100 1200    29       0     0     0>
+            , <&key_physical_attrs 100 100 1300    88       0     0     0>
+            , <&key_physical_attrs 100 100 1400    129       0     0     0>
+
+              // home row
+            , <&key_physical_attrs 100 100    0  229       0     0     0>
+            , <&key_physical_attrs 100 100  100  188       0     0     0>
+            , <&key_physical_attrs 100 100  200  128       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
+            , <&key_physical_attrs 100 100  400  100       0     0     0>
+            , <&key_physical_attrs 100 100  500  100       0     0     0>
+
+            , <&key_physical_attrs 100 100  900  100       0     0     0>
+            , <&key_physical_attrs 100 100 1000  100       0     0     0>
+            , <&key_physical_attrs 100 100 1100  100       0     0     0>
+            , <&key_physical_attrs 100 100 1200  128       0     0     0>
+            , <&key_physical_attrs 100 100 1300  188       0     0     0>
+            , <&key_physical_attrs 100 100 1400  229       0     0     0>
+
+              // bottom row
+            //, <&key_physical_attrs 100 100    0  200       0     0     0>
+            , <&key_physical_attrs 100 100  100  288       0     0     0>
+            , <&key_physical_attrs 100 100  200  229       0     0     0>
+            , <&key_physical_attrs 100 100  300  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  200       0     0     0>
+            , <&key_physical_attrs 100 100  500  200       0     0     0>
+            , <&key_physical_attrs 100 100  625  100       4500     675     150> // encoder left
+            
+            , <&key_physical_attrs 100 100  775  100       (-4500)     825     150> // endoder right
+            , <&key_physical_attrs 100 100  900  200       0     0     0>
+            , <&key_physical_attrs 100 100 1000  200       0     0     0>
+            , <&key_physical_attrs 100 100 1100  200       0     0     0>
+            , <&key_physical_attrs 100 100 1200  229       0     0     0>
+            , <&key_physical_attrs 100 100 1300  288       0     0     0>
+            //, <&key_physical_attrs 100 100 1400  200       0     0     0>
+
+
+            // thumb clusters
+            , <&key_physical_attrs 100 100  333  300       0     0     0>
+            , <&key_physical_attrs 100 100  433  300       0     0     0>
+            , <&key_physical_attrs 100 100  533  300       0     0     0>
+            , <&key_physical_attrs 100 100  633  300       0     0     0>
+
+            , <&key_physical_attrs 100 100 767  300       0     0     0>
+            , <&key_physical_attrs 100 100 867  300       0     0     0>
+            , <&key_physical_attrs 100 100 967  300       0     0     0>
+            , <&key_physical_attrs 100 100 1067  300       0     0     0>
+            ;
+    };
+};

@@ -1,0 +1,26 @@
+if SHIELD_HUGIN
+# left Keyboard half
+# Name must be less than 16 characters long!
+# This is the display name of the device over USB and BLE (that's why Hugin and Munin is used)
+
+config ZMK_KEYBOARD_NAME
+    default "Hugin und Munin"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+# 1 peripheral + 3 profiles (I guess I could add more...)
+config BT_MAX_CONN
+    default 4
+# should be the same as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 4
+
+endif
+
+if SHIELD_HUGIN || SHIELD_MUNIN
+
+config ZMK_SPLIT
+    default y
+
+endif

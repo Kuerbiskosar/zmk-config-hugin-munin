@@ -1,0 +1,7 @@
+# Note: Hugin is left, Munin is right. I chose this naming convention and I will fly with it.
+# Note Note: Hugin and Munin are two ravens of the norse god Odin.
+config SHIELD_HUGIN
+    def_bool $(shields_list_contains,hugin)
+
+config SHIELD_MUNIN
+    def_bool $(shields_list_contains,munin)
