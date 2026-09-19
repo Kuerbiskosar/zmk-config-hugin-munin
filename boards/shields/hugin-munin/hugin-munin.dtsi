@@ -36,7 +36,7 @@
     transform = <&default_transform>; // label of the matrix transform this layout uses
 };
 
-\ {
+/ {
     chosen {
         zmk, physical-layout = &physical_layout0
     };
