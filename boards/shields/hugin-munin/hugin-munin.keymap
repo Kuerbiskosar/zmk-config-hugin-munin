@@ -14,7 +14,7 @@
     behaviors {
         mouse_msc_encoder: mouse_scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binging-cells = <2>;
+            #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
         };
         mouse_mmv_encoder: mouse_move_encoder {
