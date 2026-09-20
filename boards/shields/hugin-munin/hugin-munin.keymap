@@ -90,7 +90,7 @@
                      &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp BRIGHTNESS_INC BRIGHTNESS_DEC>;
+            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         mouse_layer {
