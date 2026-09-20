@@ -73,7 +73,7 @@
                      &trans &trans &trans &trans                                   &kp RWIN  &trans  &kp RCTRL &kp RALT
             >;
 
-            sensor-bindings = <&mouse_msc_endocer SCRL_RIGHT SCRL_LEFT &mouse_msc_encoder SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT SCRL_LEFT &mouse_msc_encoder SCRL_UP SCRL_DOWN>;
         };
 
         number_layer {
