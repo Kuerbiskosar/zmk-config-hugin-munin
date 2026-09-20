@@ -24,8 +24,8 @@
         };
         bt_switch_encoder: bt_switch_encoder {
             compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&bt>, <&bt>;
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
         };
     };
     keymap {
@@ -123,7 +123,7 @@
                      &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&bt_switch_encoder BT_NXT BT_PRV>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&bt_switch_encoder>;
         };
 
 
