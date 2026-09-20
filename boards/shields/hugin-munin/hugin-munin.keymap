@@ -53,7 +53,7 @@
                      &mo FUNC &mo NUM &mo SYM &mo MOUSE                  &kp LWIN  &kp SPACE  &kp LCTRL &kp LALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         symbol_layer {
@@ -73,7 +73,7 @@
                      &trans &trans &trans &trans                                   &kp RWIN  &trans  &kp RCTRL &kp RALT
             >;
 
-            sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT SCRL_LEFT &mouse_msc_encoder SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT SCRL_LEFT>, <&mouse_msc_encoder SCRL_UP SCRL_DOWN>;
         };
 
         number_layer {
@@ -90,7 +90,7 @@
                      &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
+            sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND>, <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         mouse_layer {
@@ -107,7 +107,7 @@
                      &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT MOVE_LEFT &mouse_mmv_encoder MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT MOVE_LEFT>, <&mouse_mmv_encoder MOVE_UP MOVE_DOWN>;
         };
         function_layer {
             display-name = "Function";
@@ -123,7 +123,7 @@
                      &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &bt_switch_encoder BT_NXT BT_PRV>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&bt_switch_encoder BT_NXT BT_PRV>;
         };
 
 
