@@ -46,9 +46,7 @@
             , <&key_physical_attrs 100 100  300  200       0     0     0>
             , <&key_physical_attrs 100 100  400  200       0     0     0>
             , <&key_physical_attrs 100 100  500  200       0     0     0>
-            , <&key_physical_attrs 100 100  625  100       4500     675     150> // encoder left
             
-            , <&key_physical_attrs 100 100  775  100       (-4500)     825     150> // endoder right
             , <&key_physical_attrs 100 100  900  200       0     0     0>
             , <&key_physical_attrs 100 100 1000  200       0     0     0>
             , <&key_physical_attrs 100 100 1100  200       0     0     0>
@@ -62,7 +60,9 @@
             , <&key_physical_attrs 100 100  433  300       0     0     0>
             , <&key_physical_attrs 100 100  533  300       0     0     0>
             , <&key_physical_attrs 100 100  633  300       0     0     0>
+            , <&key_physical_attrs 100 100  625  100       4500     675     150> // encoder left
 
+            , <&key_physical_attrs 100 100  775  100       (-4500)     825     150> // endoder right
             , <&key_physical_attrs 100 100 767  300       0     0     0>
             , <&key_physical_attrs 100 100 867  300       0     0     0>
             , <&key_physical_attrs 100 100 967  300       0     0     0>

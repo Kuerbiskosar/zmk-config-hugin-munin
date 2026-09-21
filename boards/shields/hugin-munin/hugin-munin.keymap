@@ -49,8 +49,8 @@
             bindings = <
     &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                      &kp Y &kp U  &kp I     &kp O   &kp P    &kp ENTER
     &kp LSHFT &kp A &kp S &kp D &kp F &kp G                                      &kp H &kp J  &kp K     &kp L   &kp RBKT &kp RSHFT
-              &kp Z &kp X &kp C &kp V &kp B &kp C_PLAY_PAUSE          &kp C_MUTE  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                     &mo FUNC &mo NUM &mo SYM &mo MOUSE                  &kp LWIN  &kp SPACE  &kp LCTRL &kp LALT
+              &kp Z &kp X &kp C &kp V &kp B                                      &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+            &mo FUNC &mo NUM &mo SYM &mo MOUSE &kp C_PLAY_PAUSE      &kp C_MUTE &kp LWIN  &kp SPACE  &kp LCTRL &kp LALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -68,9 +68,9 @@
 //                        |     |       | ---- |        |        | RWin  |        |RCtrl  |RALT |
             bindings = <
     &to DEFAULT &kp N1       &kp N2    &kp N3    &kp N4 &kp N5                       &kp N6      &kp N7    &kp N8       &kp N9         &kp N0  &trans
-    &trans &kp RA(BSLH) &kp GRAVE &kp NUBS  &kp TAB  &kp DEL                          &trans      &kp BSPC  &kp RA(SQT)  &kp RA(BSLH)   &kp BSLH &trans
-           &kp RA(N1)   &kp RA(N2) &kp RA(N3) &kp RA(N8) &trans  &trans      &to SYM &kp RA(N6)  &kp RA(N7) &kp RA(LBKT)  &kp RA(RBKT) &kp EQUAL
-                     &trans &trans &trans &trans                                   &kp RWIN  &trans  &kp RCTRL &kp RALT
+    &trans &kp RA(BSLH) &kp GRAVE &kp NUBS  &kp TAB  &kp DEL                         &trans      &kp BSPC  &kp RA(SQT)  &kp RA(BSLH)   &kp BSLH &trans
+           &kp RA(N1)   &kp RA(N2) &kp RA(N3) &kp RA(N8) &trans                      &kp RA(N6)  &kp RA(N7) &kp RA(LBKT)  &kp RA(RBKT) &kp EQUAL
+                     &trans &trans &trans &trans      &trans             &to SYM     &kp RWIN  &trans  &kp RCTRL &kp RALT
             >;
 
             sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT SCRL_LEFT>, <&mouse_msc_encoder SCRL_UP SCRL_DOWN>;
@@ -84,10 +84,10 @@
 //         |kp - |kp 1 |kp 2  |kp 3  |kp 0  |  |       |       |to Num   |  |      | Home  | End   | del  |       |
 //                        |     | ----- |      |        |        |       |        |       |     |
             bindings = <
-    &to DEFAULT &kp KP_ENTER   &kp KP_N7 &kp KP_N8  &kp KP_N9 &kp KP_SLASH                          &kp INS &kp PG_UP    &kp UP   &kp PG_DN &kp MINUS  &trans
+    &to DEFAULT &kp KP_ENTER   &kp KP_N7 &kp KP_N8  &kp KP_N9 &kp KP_SLASH                     &kp INS &kp PG_UP    &kp UP   &kp PG_DN &kp MINUS  &trans
     &trans &kp KP_DOT     &kp KP_N4 &kp KP_N5  &kp KP_N6  &kp ASTERISK                         &kp KP_PLUS &kp LEFT &kp DOWN &kp RIGHT &trans     &trans
-           &kp KP_MINUS   &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_N0        &trans        &to NUM  &trans      &kp HOME &kp END  &kp DEL   &trans
-                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+           &kp KP_MINUS   &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_N0                             &trans      &kp HOME &kp END  &kp DEL   &trans
+                     &trans &trans &trans &trans         &trans                   &to NUM      &trans  &trans  &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND>, <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
@@ -103,8 +103,8 @@
             bindings = <
     &to DEFAULT &kp P   &kp O &kp I  &kp U &kp Z                          &trans &mkp MB4 &mkp MB5   &trans &trans  &trans
     &trans &kp RBKT     &kp L &kp K  &kp J  &kp H                         &mkp MB3 &mkp MB1 &mkp MB2 &trans &trans  &trans
-           &kp FSLH   &kp DOT &kp COMMA &kp M  &kp N &trans    &to MOUSE  &trans      &trans &trans  &trans   &trans
-                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+           &kp FSLH   &kp DOT &kp COMMA &kp M  &kp N                      &trans &trans &trans  &trans   &trans
+                     &trans &trans &trans &trans     &trans           &to MOUSE       &trans  &trans  &trans &trans
             >;
 
             sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT MOVE_LEFT>, <&mouse_mmv_encoder MOVE_UP MOVE_DOWN>;
@@ -117,10 +117,10 @@
 //         |AltGr| Alt | Ctrl | Space| Win  |  |       |       |to Func  |  |      | F1    |  F2   |  F3  |  F10  |
 //                        |     |       |      | ----- |        |       |        |       |     |
             bindings = <
-    &to DEFAULT &trans   &trans &studio_unlock  &out OUT_TOG &bt BT_CLR                          &trans &kp F7 &kp F8 &kp F9 &kp F12  &trans
-    &trans &caps_word     &kp CAPS &kp SLCK  &kp KP_NLCK  &trans                         &trans &kp F4 &kp F5 &kp F6 &kp F6  &kp F11
-           &kp RALT   &kp LALT &kp LCTRL &kp SPACE  &kp LWIN &trans             &to FUNC  &trans      &kp F1 &kp F2  &kp F3   &kp F10
-                     &trans &trans &trans &trans                                               &trans  &trans  &trans &trans
+    &to DEFAULT &trans   &trans &studio_unlock  &out OUT_TOG &bt BT_CLR                  &trans &kp F7 &kp F8 &kp F9 &kp F12  &trans
+    &trans &caps_word    &kp CAPS &kp SLCK  &kp KP_NLCK  &trans                         &trans &kp F4 &kp F5 &kp F6 &kp F6  &kp F11
+           &kp RALT   &kp LALT &kp LCTRL &kp SPACE  &kp LWIN                             &trans &kp F1 &kp F2  &kp F3   &kp F10
+                     &trans &trans &trans &trans        &trans                 &to FUNC &trans  &trans  &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&bt_switch_encoder>;
