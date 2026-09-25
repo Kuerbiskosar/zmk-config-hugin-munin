@@ -7,12 +7,12 @@ manifest:
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: module_led_behaviour_base
-      url-base: https://github.com/Kuerbiskosar/zmk-led-behaviour
+      url-base: https://github.com/Kuerbiskosar
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: module_led_behaviour
+    - name: zmk-led-behaviour
       remote: module_led_behaviour_base
       revision: main
   self:
