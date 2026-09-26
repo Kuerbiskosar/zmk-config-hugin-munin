@@ -19,10 +19,10 @@
 #
 ---
 include:
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: hugin
     snippet: zmk-usb-logging
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: munin
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
