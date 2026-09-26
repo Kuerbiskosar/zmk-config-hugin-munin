@@ -19,9 +19,9 @@
 #
 ---
 include:
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: hugin
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: munin
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: settings_reset
