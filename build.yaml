@@ -18,5 +18,10 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-board: [ "nice_nano//zmk" ]
-shield: [ "hugin", "munin", "settings_reset" ]
+include:
+  - board: nice_nano//zmk
+    shield: hugin
+  - board: nice_nano//zmk
+    shield: munin
+  - board: nice_nano//zmk
+    shield: settings_reset
