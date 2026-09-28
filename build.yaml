@@ -21,7 +21,6 @@
 include:
   - board: nice_nano_v2
     shield: hugin
-    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: munin
   - board: nice_nano_v2
