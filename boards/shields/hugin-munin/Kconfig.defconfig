@@ -23,13 +23,5 @@ if SHIELD_HUGIN || SHIELD_MUNIN
 config ZMK_SPLIT
     default y
 
-config EC11
-    default y
-
-config EC11_TRIGGER_GLOBAL_THREAD
-    default y
-
-config ZMK_POINTING
-    default y
 
 endif
