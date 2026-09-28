@@ -26,7 +26,7 @@ config ZMK_SPLIT
 config EC11
     default y
 
-config EC11_TRIGGER_GLOBAL_TRHEAD
+config EC11_TRIGGER_GLOBAL_THREAD
     default y
 
 config ZMK_POINTING
