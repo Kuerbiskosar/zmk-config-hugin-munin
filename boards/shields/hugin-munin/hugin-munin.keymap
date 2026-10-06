@@ -73,7 +73,7 @@
                      &trans &trans &trans &trans      &trans             &to SYM     &kp RWIN  &trans  &kp RCTRL &kp RALT
             >;
 
-            sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT SCRL_LEFT>, <&mouse_msc_encoder SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_msc_encoder SCRL_RIGHT(10) SCRL_LEFT(10)>, <&mouse_msc_encoder SCRL_UP(10) SCRL_DOWN(10)>;
         };
 
         number_layer {
@@ -107,7 +107,7 @@
                      &trans &trans &trans &trans     &trans           &to MOUSE       &trans  &trans  &trans &trans
             >;
 
-            sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT MOVE_LEFT>, <&mouse_mmv_encoder MOVE_UP MOVE_DOWN>;
+            sensor-bindings = <&mouse_mmv_encoder MOVE_RIGHT(1500) MOVE_LEFT(1500)>, <&mouse_mmv_encoder MOVE_UP(1500) MOVE_DOWN(1500)>;
         };
         function_layer {
             display-name = "Function";
